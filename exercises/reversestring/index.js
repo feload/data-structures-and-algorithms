@@ -13,7 +13,43 @@ function reverse(str) {
 }
 */
 
+/*
+// Second solution
 function reverse(str) {
+    let reversed = ""
+
+    for (letter of str) {
+        reversed = letter+reversed
+    }
+
+    return reversed
+}
+*/
+
+// Third solution
+function reverse(str) {
+    return str.split('').reduce((rev,char) => char + rev)
 }
 
 module.exports = reverse;
+
+/**
+ *
+// Second solution
+function reverse(str) {
+
+    // Run debugger mode: node inspect index.js
+    debugger
+
+    let reversed = ""
+
+    for (letter of str) {
+        reversed = letter+reversed
+    }
+
+    return reversed
+}
+
+reverse('abcd')
+
+*/
