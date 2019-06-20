@@ -12,6 +12,26 @@
 //   4
 //   buzz
 
-function fizzBuzz(n) {}
+// first solution
+function fizzBuzz(n) {
+
+    const fizz = 3
+    const fizzStr = 'fizz'
+    const buzz = 5
+    const buzzStr = 'buzz'
+
+    for (let i = 1; i < n + 1; i++) {
+        if (i % fizz == 0 && i % buzz == 0) {
+            console.log(fizzStr+buzzStr)
+        }else if (i % fizz == 0) {
+            console.log(fizzStr)
+        }else if (i % buzz == 0) {
+            console.log(buzzStr)
+        }else{
+            console.log(i)
+        }
+    }
+
+}
 
 module.exports = fizzBuzz;
