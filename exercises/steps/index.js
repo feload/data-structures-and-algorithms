@@ -17,6 +17,12 @@
 //       '### '
 //       '####'
 
-function steps(n) {}
+function steps(n) {
+    for (let i = 1; i <= n; i++) {
+        const sp = n - i
+        const pw = n - sp
+        console.log([...Array(pw).fill('#',0,pw), ...Array(sp).fill(' ',0,sp)].join(''))
+    }
+}
 
 module.exports = steps;
