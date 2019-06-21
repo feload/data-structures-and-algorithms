@@ -14,6 +14,22 @@
 //       ' ### '
 //       '#####'
 
-function pyramid(n) {}
+// First solution.
+function pyramid(n) {
+    let levels = Array(n*2)
+            .fill(1)
+            .map((e, idx) => e+idx)
+            .filter(i => i%2 != 0)
+
+    levels.forEach((lvl) => {
+        const sideSpace = (levels[levels.length-1]-lvl)/2
+        console.log([
+            ...Array(sideSpace).fill(' ', 0, sideSpace),
+            ...Array(lvl).fill('#', 0, lvl),
+            ...Array(sideSpace).fill(' ', 0, sideSpace)
+        ].join(''))
+    })
+
+}
 
 module.exports = pyramid;
