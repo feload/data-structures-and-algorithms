@@ -47,7 +47,7 @@ function fib(n) {
 }
 
 // Forth solution (OK With Memoization).
-Memoization is about storing
+Memoization is about caching function results.
 */
 
 function memoize(fn) {
