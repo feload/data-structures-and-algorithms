@@ -25,8 +25,8 @@ function fib(n) {
     return ac[n]
 
 }
-*/
 
+// Second solution.
 function fib(n, i = 2, ac = [0, 1]) {
     ac.push(ac[i-2] + ac[i-1])
 
@@ -36,6 +36,16 @@ function fib(n, i = 2, ac = [0, 1]) {
     }
 
     return ac[n]
+}
+
+*/
+// Third solution.
+function fib(n) {
+    if (n < 2) {
+        return n
+    }
+
+    return fib(n-1) + fib(n-2)
 }
 
 module.exports = fib;
