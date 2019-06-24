@@ -8,6 +8,34 @@
 // Example:
 //   fib(4) === 3
 
-function fib(n) {}
+// First solution.
+/*
+function fib(n) {
+
+    let ac = []
+
+    for (let i = 0; i < n+1; i++) {
+        if (i == 0 || i == 1) {
+            ac.push(i)
+        }else{
+            ac.push(ac[i-2]+ac[i-1])
+        }
+    }
+
+    return ac[n]
+
+}
+*/
+
+function fib(n, i = 2, ac = [0, 1]) {
+    ac.push(ac[i-2] + ac[i-1])
+
+    if (i < n+1) {
+        i++
+        fib(n, i, ac)
+    }
+
+    return ac[n]
+}
 
 module.exports = fib;
