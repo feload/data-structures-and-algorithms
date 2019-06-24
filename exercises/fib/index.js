@@ -23,9 +23,8 @@ function fib(n) {
     }
 
     return ac[n]
-
-}
-
+}*/
+/*
 // Second solution.
 function fib(n, i = 2, ac = [0, 1]) {
     ac.push(ac[i-2] + ac[i-1])
@@ -38,9 +37,7 @@ function fib(n, i = 2, ac = [0, 1]) {
     return ac[n]
 }
 
-*/
-
-// Third solution.
+// Third solution. THIS IS NOT VERY FUNCTIONAL. EXPONENTIAL Time.
 function fib(n) {
     if (n < 2) {
         return n
@@ -49,4 +46,29 @@ function fib(n) {
     return fib(n-1) + fib(n-2)
 }
 
+// Forth solution (OK With Memoization).
+Memoization is about storing
+*/
+
+function memoize(fn) {
+    const cache = {}
+    return function (...args) {
+        if (cache[args]) {
+            return cache[args];
+        }
+
+        const result = fn.apply(this, args)
+        cache[args] = result
+        return result
+    }
+}
+
+function slowFib(n) {
+    if (n < 2) {
+        return n
+    }
+    return fib(n-1) + fib(n-2)
+}
+
+const fib = memoize(slowFib)
 module.exports = fib;
