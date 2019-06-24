@@ -39,6 +39,7 @@ function fib(n, i = 2, ac = [0, 1]) {
 }
 
 */
+
 // Third solution.
 function fib(n) {
     if (n < 2) {
