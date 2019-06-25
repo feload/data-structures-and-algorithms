@@ -11,6 +11,25 @@
 // 4       5
 // Answer: [1, 3, 2]
 
-function levelWidth(root) {}
+function levelWidth(root) {
+    const s = 's'
+    const counters = [0]
+    const items = [root, s]
+
+    // If 's' stays alone inside the array, that means we are done.
+    while (items.length > 1) {
+        let item = items.shift()
+
+        if (item === s) {
+            counters.push(0)
+            items.push(s)
+        }else{
+            counters[counters.length - 1]++
+            items.push(...item.children)
+        }
+    }
+
+    return counters
+}
 
 module.exports = levelWidth;
